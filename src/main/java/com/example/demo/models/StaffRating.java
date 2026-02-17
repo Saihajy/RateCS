@@ -12,6 +12,8 @@ public class StaffRating {
     private int id;
     private String name;
     private String email;
+
+    @Enumerated(EnumType.STRING)
     private RoleType role;
     private int clarity;
     private int niceness;

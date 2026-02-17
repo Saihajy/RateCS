@@ -10,36 +10,39 @@
             <a href="/">Homepage</a>
             <a></a>
         </nav>
-        <form action="post" class="create-rating-form">
+        <form action="/create" class="create-rating-form" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="createName" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="createName" aria-describedby="emailHelp" name="name">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="createEmail">
+                <input type="email" class="form-control" id="createEmail" name="email">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Role</label>
-                <input type="text" class="form-control" id="createRole">
+                <select name="role" class="form-control" id="createRole">
+                    <option value="TA">TA</option>
+                    <option value="PROF">PROF</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Clarity</label>
-                <input type="number" class="form-control" id="createClarity">
+                <input type="number" class="form-control" id="createClarity" name="clarity">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Niceness</label>
-                <input type="number" class="form-control" id="createNiceness">
+                <input type="number" class="form-control" id="createNiceness" name="niceness">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Knowledgeable Score</label>
-                <input type="number" class="form-control" id="createKnowledgeableScore">
+                <input type="number" class="form-control" id="createKnowledgeableScore" name="knowledgeableScore">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                <textarea class="form-control" id="createComment" rows="3"></textarea>
+                <textarea class="form-control" id="createComment" rows="3" name="comment"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" value="SEND">Submit</button>
         </form>
     </body>
 </html>
