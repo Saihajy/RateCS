@@ -2,11 +2,13 @@ package com.example.demo.controllers;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.BeanDefinitionDsl.Role;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
@@ -35,6 +37,17 @@ public class StaffRatingController {
         System.out.println("Got users");
         return "index";
     }
+
+    @GetMapping("/details/{id}")
+    public String getMethodName(@PathVariable int id, Model model) {
+        System.out.println("Getting entry details");
+        Optional<StaffRating> review = staffRepo.findById(id);
+        StaffRating staff = review.get();
+        model.addAttribute("staff", staff);
+        System.out.println("Got entry details");
+        return "details";
+    }
+    
     
     @PostMapping("/create")
     public String addUser(@RequestParam Map<String, String> newreview, HttpServletResponse response) {

@@ -1,9 +1,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <header>SFU Staff Rating</header>
         <title>SFU Staff Rating</title>
+        <link rel="stylesheet" th:href="@{/base.css}">
+        <link rel="stylesheet" th:href="@{/index.css}">
     </head>
     <body>
+        <header id="title">SFU Staff Rating</header>
+        <nav>
+            <a th:href="@{/create.html}">Create Review</a>
+        </nav>
+        <div class="reviews">
+            <div class="review-card" th:each="r : ${staff}">
+                <div class="review-top">
+                    <h3 class="name" th:text="${r.name}">Name</h3>
+                    <span class="role" th:text="${r.role}">ROLE</span>
+                </div>
 
+                <div class="avg-row">
+                    <span class="avg-label">Average</span>
+                    <span class="avg-value" th:text="${#numbers.formatDecimal((r.clarity + r.niceness + r.knowledgeableScore) / 3, 1, 1)}">0.0</span>
+                    <span class="outof">/ 10</span>
+                </div>
+
+                <a class="btn-details" th:href="@{/details/{id}(id=${r.id})}">Details</a>
+            </div>
+        </div>
     </body>
 </html>

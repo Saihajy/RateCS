@@ -31,6 +31,14 @@ public class StaffRating {
         this.comment = comment;
     }
 
+    public RoleType getRole() {
+        return role;
+    }
+
+    public void setRole(RoleType role) {
+        this.role = role;
+    }
+
     public StaffRating(){
 
     }
