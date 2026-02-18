@@ -14,11 +14,11 @@
         <form action="/create" class="create-rating-form" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="createName" aria-describedby="emailHelp" name="name">
+                <input type="text" class="form-control" id="createName" aria-describedby="emailHelp" name="name" required minlength="2" maxlength="60">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="createEmail" name="email">
+                <input type="email" class="form-control" id="createEmail" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Role</label>
@@ -29,19 +29,19 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Clarity</label>
-                <input type="number" class="form-control" id="createClarity" name="clarity">
+                <input type="number" class="form-control" id="createClarity" name="clarity" required min="1" max="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Niceness</label>
-                <input type="number" class="form-control" id="createNiceness" name="niceness">
+                <input type="number" class="form-control" id="createNiceness" name="niceness" required min="1" max="10">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Knowledgeable Score</label>
-                <input type="number" class="form-control" id="createKnowledgeableScore" name="knowledgeableScore">
+                <input type="number" class="form-control" id="createKnowledgeableScore" name="knowledgeableScore" required min="1" max="10">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                <textarea class="form-control" id="createComment" rows="3" name="comment" ></textarea>
+                <textarea class="form-control" id="createComment" rows="3" name="comment" maxalength="250"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" value="SEND">Submit</button>
         </form>

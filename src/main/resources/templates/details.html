@@ -8,6 +8,8 @@
 
     <nav>
         <a th:href="@{/}">Homepage</a>
+        <a th:href="@{/edit/{id}(id=${staff.id})}">Edit</a>
+        <a th:href="@{/delete/{id}(id=${staff.id})}">Delete</a>
     </nav>
 
     <div style="max-width: 900px; margin: 25px auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
