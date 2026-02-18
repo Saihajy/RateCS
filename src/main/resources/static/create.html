@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <title>SFU Staff Rating</title>
+        <link rel="stylesheet" href="/base.css">
+        <link rel="stylesheet" href="/create.css">
+    </head>
+    <body>
+        <header id="title">SFU Staff Rating</header>
+        <nav>
+            <a href="/">Homepage</a>
+            <a></a>
+        </nav>
+        <form action="/create" class="create-rating-form" method="post">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="createName" aria-describedby="emailHelp" name="name" required minlength="2" maxlength="60">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="createEmail" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Role</label>
+                <select name="role" class="form-control" id="createRole">
+                    <option value="TA">TA</option>
+                    <option value="PROF">PROF</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Clarity</label>
+                <input type="number" class="form-control" id="createClarity" name="clarity" required min="1" max="10">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Niceness</label>
+                <input type="number" class="form-control" id="createNiceness" name="niceness" required min="1" max="10">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Knowledgeable Score</label>
+                <input type="number" class="form-control" id="createKnowledgeableScore" name="knowledgeableScore" required min="1" max="10">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                <textarea class="form-control" id="createComment" rows="3" name="comment" maxalength="250"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" value="SEND">Submit</button>
+        </form>
+    </body>
+</html>

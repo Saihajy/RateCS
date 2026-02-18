@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SFU Staff Rating - Details</title>
+    <link rel="stylesheet" th:href="@{/base.css}">
+</head>
+<body>
+    <header id="title">SFU Staff Rating</header>
+
+    <nav>
+        <a th:href="@{/}">Homepage</a>
+        <a th:href="@{/edit/{id}(id=${staff.id})}">Edit</a>
+        <a th:href="@{/delete/{id}(id=${staff.id})}">Delete</a>
+    </nav>
+
+    <div style="max-width: 900px; margin: 25px auto; background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+        <h2 th:text="${staff.name}">Name</h2>
+
+        <p><strong>Email:</strong> <span th:text="${staff.email}">email</span></p>
+        <p><strong>Role:</strong> <span th:text="${staff.displayTitle}">role</span></p>
+
+        <hr>
+
+        <p><strong>Clarity:</strong> <span th:text="${staff.clarity}">0</span> / 10</p>
+        <p><strong>Niceness:</strong> <span th:text="${staff.niceness}">0</span> / 10</p>
+        <p><strong>Knowledgeable:</strong> <span th:text="${staff.knowledgeableScore}">0</span> / 10</p>
+
+        <hr>
+
+        <p><strong>Comment:</strong></p>
+        <p th:text="${staff.comment}">comment</p>
+    </div>
+</body>
+</html>

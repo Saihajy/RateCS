@@ -1,0 +1,64 @@
+.reviews{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.review-card{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 14px;
+  background: white;
+}
+
+.review-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.name{
+  margin: 0;
+  font-size: 18px;
+}
+
+.role{
+  border: 1px solid #999;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.avg-row{
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.avg-label{
+  font-size: 13px;
+  color: #555;
+}
+
+.avg-value{
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.outof{
+  font-size: 13px;
+  color: #666;
+}
+
+.btn-details{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111;
+}
