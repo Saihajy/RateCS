@@ -30,7 +30,7 @@ public class StaffRatingController {
     @Autowired
     private StaffRatingRepository staffRepo;
 
-    @GetMapping("/")
+    @GetMapping("/") // Endpoint for indexpage
     public String index(Model model) {
         System.out.println("Getting users");
         List<StaffRating> staff = staffRepo.findAll();
@@ -39,7 +39,7 @@ public class StaffRatingController {
         return "index";
     }
 
-    @GetMapping("/details/{id}")
+    @GetMapping("/details/{id}") // Endpoint for specific entry
     public String getMethodName(@PathVariable int id, Model model) {
         System.out.println("Getting entry details");
         Optional<StaffRating> review = staffRepo.findById(id);
@@ -50,7 +50,7 @@ public class StaffRatingController {
     }
     
     
-    @PostMapping("/create")
+    @PostMapping("/create") // Endpoint for creating new review entry
     public String addUser(@RequestParam Map<String, String> newreview, HttpServletResponse response) {
         System.out.println("CREATED review");
         String name = newreview.get("name");
@@ -65,7 +65,7 @@ public class StaffRatingController {
         return "redirect:/";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit/{id}") // Endpoint for editing a current entry by id
     public String edit(@PathVariable int id, Model model) {
         System.out.println("Getting edit details");
         Optional<StaffRating> review = staffRepo.findById(id);
@@ -75,7 +75,7 @@ public class StaffRatingController {
         return "edit";
     }
 
-    @PostMapping("/edit/{id}")
+    @PostMapping("/edit/{id}") // Endpoint for sending a post once entry has been updated
     public String editSubmit(@PathVariable int id, @ModelAttribute StaffRating staffForm) {
         StaffRating existing = staffRepo.findById(id).orElseThrow();
         existing.setName(staffForm.getName());
@@ -90,13 +90,13 @@ public class StaffRatingController {
         return "redirect:/details/" + id;
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete/{id}") // Endpoint for deleting entry
     public String confirmDelete(@PathVariable int id, Model model) {
         model.addAttribute("id", id);
         return "delete";
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/delete/{id}") // Endpoint to confirm deletion when it recieves post request from confirmation page (delete.html)
     public String doDelete(@PathVariable int id) {
         staffRepo.deleteById(id);
         return "redirect:/";

@@ -11,6 +11,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="staff")
 public class StaffRating {
+    // The table used in my database with a function displayTitle() that makes it easier to work with in controller and can make polymorphic call in controller
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
