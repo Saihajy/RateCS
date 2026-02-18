@@ -2,6 +2,10 @@ package com.example.demo.models;
 
 import java.time.LocalDateTime;
 
+import com.example.StaffMemberProfile;
+import com.example.ProfProfile;
+import com.example.TAProfile;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -99,7 +103,12 @@ public class StaffRating {
         this.comment = comment;
     }
 
-    
-
-
+    @Transient // Going forward probably would have used this for calculating average
+    public String getDisplayTitle() {
+        StaffMemberProfile p = 
+        (this.role == RoleType.TA) ? new TAProfile():
+        (this.role == RoleType.PROF) ? new ProfProfile() :
+        () -> this.role.name();
+        return p.displayTitle();
+    }
 }

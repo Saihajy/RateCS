@@ -13,13 +13,11 @@
       <a th:href="@{/}">Homepage</a>
     </nav>
 
-    <!-- Bind to staff object -->
     <form class="create-rating-form"
           th:object="${staff}"
           th:action="@{/edit/{id}(id=*{id})}"
           method="post">
 
-      <!-- Optional: hidden id (extra safe) -->
       <input type="hidden" th:field="*{id}">
 
       <div class="mb-3">
